@@ -10,8 +10,11 @@ import javafx.scene.image.ImageView;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.util.Duration;
 
 public class ProcessManagerApp {
 
@@ -59,7 +62,6 @@ public class ProcessManagerApp {
 
         // Configurar el botón de búsqueda
         searchField.textProperty().addListener((observable, oldValue, newValue) -> filterProcesses(newValue));
-        System.out.println("actionImageView: " + actionImageView);
         // Ocultar el ImageView al inicio
         actionImageView.setVisible(false);
         poofImageView.setVisible(false);
@@ -123,6 +125,17 @@ public class ProcessManagerApp {
             processTable.setItems(filteredList);
         }
     }
+    
+    private void showImagesTemporarily() {
+        actionImageView.setVisible(true);
+        poofImageView.setVisible(true);
+
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+            actionImageView.setVisible(false);
+            poofImageView.setVisible(false);
+        }));
+        timeline.play();
+    }
 
     @FXML
     private void handleReiniciar() {
@@ -136,8 +149,7 @@ public class ProcessManagerApp {
 
                 if (kill.exitValue() == 0) {
                     actionImageView.setImage(new Image(getClass().getResourceAsStream("images/cosmo.png")));
-                    actionImageView.setVisible(true);
-                    poofImageView.setVisible(true);
+                    showImagesTemporarily();
                     System.out.println("Proceso " + selectedProcess.getName() + " eliminado correctamente.");
 
                     // Reiniciar el proceso (esto puede requerir el path completo del ejecutable)
@@ -175,8 +187,7 @@ public class ProcessManagerApp {
                 if (process.exitValue() == 0) {
                     // Eliminar el proceso de la lista y actualizar la tabla
                     actionImageView.setImage(new Image(getClass().getResourceAsStream("images/poofB.png")));
-                    actionImageView.setVisible(true);
-                    poofImageView.setVisible(true);
+                    showImagesTemporarily();
                     processList.remove(selectedProcess);
                     processTable.getItems().remove(selectedProcess);
                     System.out.println("Proceso " + selectedProcess.getName() + " eliminado correctamente.");
@@ -207,8 +218,7 @@ public class ProcessManagerApp {
                 Process process = processBuilder.start(); // Iniciar el proceso
                 System.out.println("Creando nuevo proceso: " + name);
                 actionImageView.setImage(new Image(getClass().getResourceAsStream("images/wanda.png")));
-                actionImageView.setVisible(true);
-                poofImageView.setVisible(true);
+                showImagesTemporarily();
                 // Actualizar la lista de procesos para mostrar el nuevo proceso
                 loadProcesses(); // Recargar los procesos
 
