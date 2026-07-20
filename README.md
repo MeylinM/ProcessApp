@@ -1,7 +1,7 @@
 <div align="center">
-  <h1>⚡ PROCESSAPP ⚡</h1>
+  <h1> 𐓏 PROCESSAPP 𐓏 </h1>
   <p><strong>Application to manage your computer's processes inspired by The Fairly OddParents</strong></p>
-  <p><em>"¡Puf! Cosmo y Wanda en acción" 🧚✨</em></p>
+  <p><em>"✴︎ ¡Puf! Cosmo y Wanda en acción" ✴︎</em></p>
 </div>
 
 ---
