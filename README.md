@@ -334,6 +334,17 @@ La aplicación incorpora referencias a "Los Padrinos Mágicos":
 
 ---
 
+## ★ Equipo de Desarrollo
+
+Esta aplicación fue desarrollada por:
+
+| Desarrolladora | Rol |
+|---|---|
+| [**MeylinM**](https://github.com/MeylinM) | Desarrolladora |
+| [**Elbirehl**](https://github.com/Elbirehl) | Desarrolladora |
+
+---
+
 ## ★ Licencia
 
 Este proyecto ha sido desarrollado como parte de un programa de formación profesional de **Desarrollo de Aplicaciones Multiplataforma**.
@@ -343,8 +354,6 @@ Este proyecto ha sido desarrollado como parte de un programa de formación profe
 <div align="center">
   <br>
   <p><strong>¡Gracias a Cosmo y Wanda por la inspiración! 🧚✨</strong></p>
-  <p><strong>Desarrollado por</strong></p>
-  <p><a href="https://github.com/MeylinM">@MeylinM</a></p>
   <br>
   <p>⚡ <strong>Última actualización:</strong> 2024 ⚡</p>
 </div>
